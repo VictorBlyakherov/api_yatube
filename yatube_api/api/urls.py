@@ -2,7 +2,7 @@ from django.urls import include, path
 from rest_framework.authtoken import views
 from rest_framework.routers import SimpleRouter
 
-from .views import CommentViewSet, GroupViewSet, PostViewSet
+from api.views import CommentViewSet, GroupViewSet, PostViewSet
 
 router = SimpleRouter()
 router.register('api/v1/posts', PostViewSet)
