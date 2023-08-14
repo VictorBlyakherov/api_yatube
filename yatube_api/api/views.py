@@ -58,4 +58,3 @@ class CommentViewSet(viewsets.ModelViewSet):
         else:
             permission_classes = [IsAuthor]
         return [permission() for permission in permission_classes]
-
