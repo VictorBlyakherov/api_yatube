@@ -9,14 +9,10 @@ from posts.models import Comment, Group, Post
 
 class IsAuthor(permissions.BasePermission):
     def has_permission(self, request, view):
-        if request.user.is_authenticated:
-            return True
-        return False
+        return request.user.is_authenticated
 
     def has_object_permission(self, request, view, obj):
-        if obj.author == request.user:
-            return True
-        return False
+        return obj.author == request.user
 
 
 class PostViewSet(viewsets.ModelViewSet):
